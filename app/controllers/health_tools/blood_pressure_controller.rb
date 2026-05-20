@@ -5,8 +5,6 @@ class HealthTools::BloodPressureController < ApplicationController
 
 	def new
 		@BloodPressureReading = BloodPressure::Reading.new(params)
-
-		puts params
 	end
 
 	def show
