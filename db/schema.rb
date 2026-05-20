@@ -10,7 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_05_20_072321) do
+ActiveRecord::Schema[8.0].define(version: 2026_05_20_075916) do
+  create_table "blood_pressure_reading_categories", force: :cascade do |t|
+    t.string "code"
+    t.string "label"
+    t.string "severity"
+    t.integer "priority"
+    t.string "patient_message"
+    t.string "recommended_action"
+    t.boolean "symptom_check_required"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blood_pressure_reading_categories_repeat_readings", force: :cascade do |t|
+    t.boolean "recommened"
+    t.integer "after_minutes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blood_pressure_reading_category_criteria", force: :cascade do |t|
+    t.string "match"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blood_pressure_reading_category_repeat_readings", force: :cascade do |t|
+    t.boolean "recommened"
+    t.integer "after_minutes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "blood_pressure_readings", force: :cascade do |t|
     t.integer "systolic"
     t.integer "diastolic"
