@@ -4,7 +4,7 @@ class HealthTools::BloodPressure::ReadingController < ApplicationController
 	end
 
 	def create
-		@Beading = BloodPressure::Reading.new(params_blood_pressure_reading)
+		@Reading = BloodPressure::Reading.new(params_blood_pressure_reading)
 
 		if @Reading.save
 			#render :show
