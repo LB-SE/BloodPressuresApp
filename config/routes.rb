@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users
 
   namespace :health_tools do
-    resources :blood_pressure, only: [:new, :index, :show]
+    namespace :blood_pressure do
+      resources :reading, only: [:index, :create, :show]
+    end
   end
 end

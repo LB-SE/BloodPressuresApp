@@ -1,10 +1,16 @@
 class HealthTools::BloodPressureController < ApplicationController
 	def index
-		render :new
+		@BloodPressureReading = BloodPressure::Reading.new
 	end
 
-	def new
-		@BloodPressureReading = BloodPressure::Reading.new(params)
+	def create
+		@BloodPressureReading = BloodPressure::Reading.new(params_blood_pressure_reading)
+
+		if @BloodPressureReading.save
+			#render :show
+		else
+			render :index
+		end
 	end
 
 	def show
@@ -13,7 +19,7 @@ class HealthTools::BloodPressureController < ApplicationController
 
 	private
 
-	def params_reading
+	def params_blood_pressure_reading
 		params.require(:blood_pressure_reading).permit(:systolic, :diastolic)
 	end
 end
