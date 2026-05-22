@@ -1,24 +1,5 @@
-# README
+# Blood Pressure App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Allows a patient to get a simple blood pressure reading
+- Allows a patient to login with their patient number and date of birth to allow them to track trends.
+- Allows a doctor to see their assigned patient's blood pressure reading.
